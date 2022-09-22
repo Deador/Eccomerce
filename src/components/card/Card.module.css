@@ -1,0 +1,54 @@
+.card_item {
+    text-align: center;
+    position: relative;
+}
+
+.price_card {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.sale_card {
+    font-size: 18px;
+    color: #999;
+    margin-left: 8px;
+    text-decoration: line-through;
+}
+
+.card_description {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.sale {
+    background: #7d26dc;
+    padding: 4px 10px;
+    border-radius: 2px;
+    position: absolute;
+    top: 184px;
+    left: 40%;
+}
+
+.number_sale {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card_text_container {
+    margin-top: 20px;
+}
+
+.icon_favorite {
+    padding-left: 48px;
+}
+
+.bottom_nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.bottom_icon{
+    margin-right: 24px;
+}

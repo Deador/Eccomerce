@@ -1,0 +1,11 @@
+/* 3 lvl */
+.three_lvl {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.item_catalog {
+    font-size: 16px;
+    color: #222529;
+}

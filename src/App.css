@@ -1,0 +1,25 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+
+#root {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #222529;
+    line-height: 1;
+}
+
+a{
+    text-decoration: none;
+}
+
+button,a{
+    cursor: pointer;
+}

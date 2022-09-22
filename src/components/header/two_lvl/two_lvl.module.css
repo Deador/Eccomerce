@@ -1,0 +1,78 @@
+/* 2 lvl */
+.header_row {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.left_nav_element_two {
+    display: flex;
+    align-items: center;
+}
+
+.right_nav_element_two {
+    display: flex;
+}
+
+.item_nav {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 16px;
+}
+
+.search {
+    padding: 12px 528px 12px 16px;
+    border: 2px solid #eeeeee;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+.btn_catalog {
+    width: 60px;
+    height: 40px;
+    background: #da1934;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.line {
+    width: 22px;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    border: none;
+}
+.line:last-child{
+    margin-bottom: 0;
+}
+
+.logo {
+    margin-left: 20px;
+    height: 18px;
+}
+
+.text_icon {
+    color: #77727c;
+    font-size: 12px;
+    line-height: 1;
+    margin-top: 8px;
+}
+
+.count_product {
+    background: #2e7d32;
+    color: white;
+    font-size: 10px;
+    padding: 4px;
+    border-radius: 70%;
+    position: absolute;
+    top: -8px;
+    right: 6px;
+}
