@@ -2,11 +2,21 @@ import React, {useEffect, useMemo} from 'react';
 import classes from "./Card.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {addInCart} from "../../store/inCart";
+import {useNavigate} from "react-router-dom";
 
 const Card = ({props, product}) => {
+    const navigate = useNavigate();
+
+    const stopPropagation = (e) => {
+        product(
+            {
+                ...props
+            });
+        e.stopPropagation();
+    };
 
     return (
-        <div className={classes.card_item}>
+        <div className={classes.card_item} onClick={() => navigate(`/products/${props.id}`)}>
             <img
                 src={props.img}
                 alt=""
@@ -23,10 +33,8 @@ const Card = ({props, product}) => {
                 </div>
             </div>
             <div className={classes.bottom_nav}>
-                <svg onClick={() => product(
-                    {
-                        ...props
-                    })} className={classes.bottom_icon} width="21" height="21" viewBox="0 0 21 21"
+                <svg onClick={stopPropagation} className={classes.bottom_icon} width="21" height="21"
+                     viewBox="0 0 21 21"
                      fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd"
