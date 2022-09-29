@@ -1,5 +1,4 @@
 // Здесь происходит подключение к базе данных по параметрам из .env
-
 const {Sequelize}=require("sequelize")
 
 module.exports=new Sequelize(

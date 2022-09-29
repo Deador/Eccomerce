@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Main/>}></Route>
-                {cards.map(item=><Route path="products/:id" element={<InfoProduct props={item}/>}></Route>)}
+                {cards.map(item => <Route path="products/:id" element={<InfoProduct props={item}/>}></Route>)}
                 <Route path="*" element={<PageError/>}></Route>
             </Routes>
         </BrowserRouter>
