@@ -4,15 +4,19 @@ import Main from "./pages/Main";
 import InfoProduct from "./pages/InfoProduct";
 import PageError from "./pages/PageError";
 import {useSelector} from "react-redux";
+import CreateDevice from "./pages/CreateDevice";
 
 
 function App() {
     const cards = useSelector(state => state.getCard.items)
+
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Main/>}></Route>
                 {cards.map(item => <Route path="products/:id" element={<InfoProduct props={item}/>}></Route>)}
+                <Route path="/create" element={<CreateDevice/>}></Route>
                 <Route path="*" element={<PageError/>}></Route>
             </Routes>
         </BrowserRouter>

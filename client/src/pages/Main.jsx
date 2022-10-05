@@ -7,7 +7,7 @@ import GetInfo from "../API/ProductInfo";
 
 function Main() {
     const [search, setSearch] = useState("");
-    const cards = useSelector(state => state.getCard.items)
+    const cards = useSelector(state => state.getCard.items);
 
     const response = async () => {
         const test = await GetInfo.getTypes();

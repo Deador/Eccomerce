@@ -1,10 +1,11 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 
-const ProductInformation = ({props}) => {
+const ProductInformation = ({info}) => {
     return (
         <div>
-            {props.description}
+            <h2 style={{marginTop: 64}}>{info.name}</h2>
+            <div style={{marginTop: 24}}>{info.description}</div>
         </div>
     );
 };
