@@ -8,8 +8,8 @@ import {useFetching} from "../hooks/useError";
 
 const InfoProduct = () => {
 
-    const params = useParams()
-    const [info, setInfo] = useState({})
+    const params = useParams();
+    const [info, setInfo] = useState({});
     // const getProduct = async () => {
     //     const response = await fetch("http://localhost:5000/api/product/" + params.id)
     //     const result = await response.json()
@@ -21,7 +21,7 @@ const InfoProduct = () => {
             const response = await GetInfo.getPageProduct(params.id)
             setInfo(response.data)
         }
-    )
+    );
 
     useEffect(() => {
         fetching()

@@ -1,25 +1,17 @@
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Main from "./pages/Main";
-import InfoProduct from "./pages/InfoProduct";
-import PageError from "./pages/PageError";
-import {useSelector} from "react-redux";
-import CreateDevice from "./pages/CreateDevice";
+import {AuthContext} from "./context/context";
+import {useState} from "react";
+import AppRouting from "./components/AppRouting";
 
 
 function App() {
-    const cards = useSelector(state => state.getCard.items)
+    const [auth, setAuth] = useState(false)
 
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Main/>}></Route>
-                {cards.map(item => <Route path="products/:id" element={<InfoProduct props={item}/>}></Route>)}
-                <Route path="/create" element={<CreateDevice/>}></Route>
-                <Route path="*" element={<PageError/>}></Route>
-            </Routes>
-        </BrowserRouter>
+        <AuthContext.Provider value={{auth, setAuth}}>
+            <AppRouting/>
+        </AuthContext.Provider>
     );
 }
 

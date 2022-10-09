@@ -15,3 +15,7 @@ export default class GetInfo {
         return response;
     }
 }
+
+export const crProduct=async (device)=>{
+    const data=await axios.post("http://localhost:5000/api/product", device)
+}

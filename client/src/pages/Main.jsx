@@ -11,7 +11,6 @@ function Main() {
 
     const response = async () => {
         const test = await GetInfo.getTypes();
-        console.log(test.data)
     }
 
     useEffect(() => {
