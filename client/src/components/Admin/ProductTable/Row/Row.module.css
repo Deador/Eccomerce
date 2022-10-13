@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 3fr) repeat(5, 1fr);
+    grid-column-gap: 56px;
+    grid-row-gap: 24px;
+}
+
+/*.container {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(9, 48px 124px 224px 102px 52px 80px 32px 24px 24px);*/
+/*    grid-column-gap: 56px;*/
+/*}*/
+
+.icon_container {
+    display: flex;
+}
+
+.icon {
+    margin-right: 24px;
+}
+
+.img {
+    width: 48px;
+    height: 48px;
+}

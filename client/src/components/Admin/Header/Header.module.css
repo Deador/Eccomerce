@@ -1,0 +1,34 @@
+.header {
+    padding: 16px 0;
+    background: #fff;
+    box-shadow: 0px 1px 8px 0px #BAAACB26;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.container__nav {
+    display: flex;
+}
+
+.nav {
+    margin-right: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.nav:last-child {
+    margin-right: 0;
+}
+
+.nav_icon {
+    margin-right: 8px;
+}

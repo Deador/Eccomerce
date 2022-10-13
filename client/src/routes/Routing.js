@@ -4,6 +4,7 @@ import React from "react";
 import Admin from "../pages/Admin";
 import CreateDevice from "../pages/CreateDevice";
 import PageError from "../pages/PageError";
+import AdminTable from "../pages/AdminTable";
 
 export const publicRoutes = [{
     id: 1,
@@ -26,7 +27,7 @@ export const publicRoutes = [{
 export const privateRoutes = [{
     id: 1,
     path: "/admin",
-    element: <CreateDevice/>
+    element: <AdminTable/>
 }, {
     id: 2,
     path: "*",

@@ -8,18 +8,20 @@
 #root {
     margin: 0 auto;
     max-width: 1200px;
+    height: 100vh;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
     color: #222529;
     line-height: 1;
+
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-button,a{
+button, a {
     cursor: pointer;
 }

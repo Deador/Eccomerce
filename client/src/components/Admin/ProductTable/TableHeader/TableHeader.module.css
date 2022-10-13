@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, 48px 124px 224px 102px 52px 80px 64px);
+    grid-column-gap: 56px;
+    margin-bottom: 24px;
+}
+
+.tab_header_element {
+    color: #757575;
+    line-height: 24px;
+}

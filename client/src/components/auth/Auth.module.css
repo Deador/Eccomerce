@@ -1,5 +1,32 @@
-.auth{
+
+.container {
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.auth_form {
+    width: 416px;
+    padding: 48px 40px;
+    box-shadow: 0px 2px 8px 0px #BAAACB4D;
+    border-radius: 12px;
+}
+
+.title {
+    margin-bottom: 24px;
+}
+
+.input_container {
+    margin-bottom: 8px;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.link {
+    color: #6F15D2;
 }
