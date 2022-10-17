@@ -1,23 +1,31 @@
-.modale {
+.modal {
     position: fixed;
-    display: none;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    display: none;
     background: rgba(0, 0, 0, 0.3);
-
 }
 
-.modale.active {
+.modal.active {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.modaleContent {
+.modalContent {
     min-width: 604px;
     background: #fff;
     padding: 40px;
     border-radius: 12px;
+}
+.file{
+    display: block;
+    margin-bottom: 24px;
+}
+
+.titleModale{
+    display: flex;
+    justify-content: space-between;
 }

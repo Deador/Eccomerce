@@ -12,7 +12,7 @@ const AdminTable = () => {
             <Header/>
             <TitleBtn setValue={setModale}/>
             <ProductTable/>
-            <Form value={modale} setValue={setModale}/>
+            {modale && <Form value={modale} setValue={setModale}/>}
         </div>
     );
 };

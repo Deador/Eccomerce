@@ -25,3 +25,7 @@ a {
 button, a {
     cursor: pointer;
 }
+
+.icon_pointer{
+    cursor: pointer;
+}

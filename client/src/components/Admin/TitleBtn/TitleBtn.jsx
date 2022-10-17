@@ -7,7 +7,7 @@ const TitleBtn = ({setValue}) => {
     return (
         <div className={classes.container}>
             <Title props="Товары"/>
-            <ButtonRound style={{width: 232, height: 48}} onClick={() => setValue(true)}>Создать</ButtonRound>
+            <ButtonRound style={{width: 232, height: 48}} onClick={() => setValue(true)}>Добавить</ButtonRound>
         </div>
     );
 };
