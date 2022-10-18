@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
-import Input from "../UI/Input/Input";
 import classes from "./Auth.module.css"
-import {AuthContext} from "../../context/context";
-import Checkbox from "../UI/checkbox/Checkbox";
-import ButtonRound from "../Admin/UI Admin/Button/ButtonRound";
+import ButtonRound from "../UI Admin/Button/ButtonRound";
+import {AuthContext} from "../../../context/context";
+import Input from "../../basic/UI/Input/Input";
+import Checkbox from "../../basic/UI/checkbox/Checkbox";
+
 
 const Auth = () => {
     const {auth, setAuth} = useContext(AuthContext)

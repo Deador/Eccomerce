@@ -18,7 +18,7 @@ class ProductController {
     }
 
     async createProduct(req, res) {
-        let {name, description, price, old_price, typeId, info} = req.body; // Достаю параметры из тела запроса
+        let {name, description, price, old_price, typeId, info, sale} = req.body; // Достаю параметры из тела запроса
         const {img} = req.files; // Достаю файлы из запроса
         let fileName = uuid.v4() + ".jpg"; // Модуль uuid генерит случайное имя
         img.mv(path.resolve(__dirname, "..", "static", fileName)); // Все файлы отправленные с клиента будут попадать в папку static
@@ -30,6 +30,7 @@ class ProductController {
             price,
             old_price,
             typeId,
+            sale,
             img: fileName,
         });
 

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/header/Header";
-import CardList from "../components/card_list/CardList";
 import {useSelector} from "react-redux";
 import {useSearch} from "../hooks/useSearch";
 import GetInfo from "../API/ProductInfo";
+import Header from "../components/User/header/Header";
+import CardList from "../components/User/card_list/CardList";
 
 function Main() {
     const [search, setSearch] = useState("");

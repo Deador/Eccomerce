@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import classes from "./ModaleCart.module.css";
-import Button from "../UI/button/Button";
 import ItemCart from "./item_cart/ItemCart";
 import {useDispatch, useSelector} from "react-redux";
-import {removeItem} from "../../store/inCart";
+import {removeItem} from "../../../store/inCart";
+import Button from "../../basic/UI/button/Button";
 
 const ModaleCart = () => {
     const dispath = useDispatch();

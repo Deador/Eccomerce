@@ -1,6 +1,5 @@
 import React, {useContext, useEffect} from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {useSelector} from "react-redux";
 import {AuthContext} from "../context/context";
 import {privateRoutes, publicRoutes} from "../routes/Routing";
 

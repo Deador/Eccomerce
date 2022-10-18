@@ -1,10 +1,8 @@
 import React from 'react';
 import Card from "../card/Card";
 import classes from "./CardList.module.css"
-import {useDispatch, useSelector} from "react-redux";
-import {addInCart} from "../../store/inCart";
-import {Link, useNavigate} from "react-router-dom";
-import InfoProduct from "../../pages/InfoProduct";
+import {useDispatch} from "react-redux";
+import {addInCart} from "../../../store/inCart";
 
 const CardList = ({props}) => {
 

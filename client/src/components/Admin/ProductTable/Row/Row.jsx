@@ -4,16 +4,17 @@ import classes from "./Row.module.css";
 const Row = ({props}) => {
 
     const IMG = `http://localhost:5000/${props.img}`;
+    const description = `${props.description.slice(0, 51)}...`;
 
     return (
         <div className={classes.container}>
-            <div className=""><img src={IMG} alt="" className={classes.img}/></div>
-            <div className="">{props.name}</div>
-            <div className="">«Взрывные котята» — это карточная игра, дико</div>
-            <div className="">Настольные игры</div>
-            <div className="">{props.price} ₽</div>
-            <div className="">{props.old_price} ₽</div>
-            <div className="">31%</div>
+            <div className={classes.text}><img src={IMG} alt="" className={classes.img}/></div>
+            <div className={classes.text}>{props.name}</div>
+            <div className={classes.text}>{description}</div>
+            <div className={classes.text}>{props.typeId}</div>
+            <div className={classes.text}>{props.price} ₽</div>
+            <div className={classes.text}>{props.old_price} ₽</div>
+            <div className={classes.text}>{props.sale}%</div>
             <div className={classes.icon_container}>
                 <div className={classes.icon}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,0 +1,19 @@
+.loader {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: dashed 2px #6F15D2;
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 180deg;
+    }
+}

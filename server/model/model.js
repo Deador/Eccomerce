@@ -21,8 +21,9 @@ const Device = sequlize.define("device", {
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     description: {type: DataTypes.STRING, unique: true, allowNull: false},
     price: {type: DataTypes.INTEGER, allowNull: false},
-    old_price: {type: DataTypes.INTEGER, allowNull: false},
-    img: {type: DataTypes.STRING, allowNull: false}
+    old_price: {type: DataTypes.INTEGER},
+    img: {type: DataTypes.STRING, allowNull: false},
+    sale: {type: DataTypes.INTEGER},
 })
 
 const DeviceInfo = sequlize.define("device_info", {

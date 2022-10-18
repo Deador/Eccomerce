@@ -2,7 +2,6 @@ import Main from "../pages/Main";
 import InfoProduct from "../pages/InfoProduct";
 import React from "react";
 import Admin from "../pages/Admin";
-import CreateDevice from "../pages/CreateDevice";
 import PageError from "../pages/PageError";
 import AdminTable from "../pages/AdminTable";
 

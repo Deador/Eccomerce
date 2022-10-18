@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
-import ProductInformation from "../components/ProductInformation";
-import {useSelector} from "react-redux";
-import Header from "../components/header/Header";
 import GetInfo from "../API/ProductInfo";
 import {useFetching} from "../hooks/useError";
+import Header from "../components/User/header/Header";
+import ProductInformation from "../components/User/ProductInformation";
+import Loader from "../components/basic/UI/loader/Loader";
 
 const InfoProduct = () => {
 
@@ -17,7 +17,7 @@ const InfoProduct = () => {
     // }
 
     // Кастомный хук для обработки API и отображения ошибок
-    const [err, fetching] = useFetching(async () => {
+    const [err, fetching, loader] = useFetching(async () => {
             const response = await GetInfo.getPageProduct(params.id)
             setInfo(response.data)
         }
@@ -31,7 +31,7 @@ const InfoProduct = () => {
         <div>
             <Header/>
             {err && <h1>{err}</h1>}
-            <ProductInformation info={info}/>
+            {loader ? <Loader/> : <ProductInformation info={info}/>}
         </div>
     );
 };

@@ -1,7 +1,5 @@
-import React, {useEffect, useMemo} from 'react';
+import React from 'react';
 import classes from "./Card.module.css"
-import {useDispatch, useSelector} from "react-redux";
-import {addInCart} from "../../store/inCart";
 import {useNavigate} from "react-router-dom";
 
 const Card = ({props, product}) => {

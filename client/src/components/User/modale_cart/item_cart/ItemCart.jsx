@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from "./itemCart.module.css"
-import {useSelector} from "react-redux";
 
 const ItemCart = ({props, remove}) => {
     // const price=props.count*props.price;

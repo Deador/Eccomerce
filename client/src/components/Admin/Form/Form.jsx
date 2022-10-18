@@ -1,33 +1,42 @@
-import React, {useState} from 'react';
-import Input from "../UI/Input/Input";
-import Button from "../UI/button/Button";
-import {crProduct} from "../../API/ProductInfo";
-import classes from "./Form.module.css";
-import Title3 from "../basic/title/Title3";
-import ButtonRound from "../Admin/UI Admin/Button/ButtonRound";
+import React, {useEffect, useState} from 'react';
+import Title3 from "../../basic/title/Title3";
+import ButtonRound from "../UI Admin/Button/ButtonRound";
+import classes from "./Form.module.css"
+import GetInfo, {crProduct} from "../../../API/ProductInfo";
+import Input from "../../basic/UI/Input/Input";
+import Select from "../../basic/UI/select/Select";
+import {useFetching} from "../../../hooks/useError";
 
 const Form = ({value, setValue}) => {
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState(0);
-    const [old_price, setOldPrice] = useState(0);
-    const [sale, setSale] = useState(0);
-    const [file, setFile] = useState(null);
 
+    const [type, setType] = useState([]);
+    const [data, setData] = useState({
+        name: "",
+        description: "",
+        price: 0,
+        old_price: 0,
+        sale: 0,
+        file: null,
+        type: []
+    });
+
+    // Добавление файла
     const addFile = (e) => {
-        setFile(e.target.files[0]);
+        setData({...data, file: e.target.files[0]});
     };
 
+    // Создание товара
     const createProduct = () => {
         const formData = new FormData();
-        formData.append("name", name)
-        formData.append("description", description)
-        formData.append("price", price)
-        formData.append("old_price", old_price)
-        formData.append("typeId", 1)
-        // form.append("sale", setSale)
-        formData.append("img", file)
-        crProduct(formData).then(r => console.log("Товар добавлен успешно"))
+        formData.append("name", data.name);
+        formData.append("description", data.description);
+        formData.append("price", data.price);
+        formData.append("old_price", data.old_price);
+        formData.append("typeId", select);
+        formData.append("sale", data.sale);
+        formData.append("img", data.file);
+        crProduct(formData).then(r => console.log("Товар добавлен успешно"));
+        setValue(false);
     };
 
     // Модальное окно
@@ -38,6 +47,21 @@ const Form = ({value, setValue}) => {
 
     const propagation = (e) => {
         e.stopPropagation();
+    };
+
+    //Получение типов
+    const [err, fetching, loader] = useFetching(async () => {
+        const response = await GetInfo.getTypes();
+        setType(response.data)
+    });
+    useEffect(() => {
+        fetching()
+    }, []);
+
+    const [select, setSelect] = useState(1);
+
+    const changeSelect = (sel) => {
+        setSelect(sel);
     };
 
     return (
@@ -52,11 +76,12 @@ const Form = ({value, setValue}) => {
                               strokeLinejoin="round"/>
                     </svg>
                 </div>
-                <Input placeholder="Введите название" onChange={e => setName(e.target.value)}/>
-                <Input placeholder="Введите описание" onChange={e => setDescription(e.target.value)}/>
-                <Input placeholder="Введите новую цену" onChange={e => setPrice(e.target.value)}/>
-                <Input placeholder="Введите старую цену" onChange={e => setOldPrice(e.target.value)}/>
-                <Input placeholder="Введите скидку" onChange={e => setSale(e.target.value)}/>
+                <Select defaultValue="Выберите тип" props={type} getSelect={changeSelect} value={select}/>
+                <Input placeholder="Введите название" onChange={e => setData({...data, name: e.target.value})}/>
+                <Input placeholder="Введите описание" onChange={e => setData({...data, description: e.target.value})}/>
+                <Input placeholder="Введите новую цену" onChange={e => setData({...data, price: e.target.value})}/>
+                <Input placeholder="Введите старую цену" onChange={e => setData({...data, old_price: e.target.value})}/>
+                <Input placeholder="Введите скидку" onChange={e => setData({...data, sale: e.target.value})}/>
                 <input type="file" onChange={addFile} className={classes.file}/>
                 <ButtonRound onClick={createProduct}>Создать</ButtonRound>
             </div>

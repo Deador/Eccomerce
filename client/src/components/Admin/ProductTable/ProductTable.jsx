@@ -1,30 +1,36 @@
 import React, {useEffect, useState} from 'react';
-import TableHeader from "./TableHeader/TableHeader";
 import classes from "./ProductTable.module.css";
 import Row from "./Row/Row";
 import {useFetching} from "../../../hooks/useError";
-import {getAllProduct} from "../../../API/ProductInfo";
+import GetInfo, {getAllProduct} from "../../../API/ProductInfo";
 import TableHeader2 from "./TableHeader2/TableHeader2";
+import Loader from "../../basic/UI/loader/Loader";
+import Title3 from "../../basic/title/Title3";
 
 const ProductTable = () => {
 
     // Получение товаров по API
-    const [data, setData] = useState([])
-    const [err, fetching] =
+    const [data, setData] = useState([]);
+    const [type, setType] = useState([]);
+    const [err, fetching, loader] =
         useFetching(async () => {
             const response = await getAllProduct();
-            setData(response.data)
+            setData(response.data);
+            const types = await GetInfo.getTypes();
+            setType(types.data)
         });
 
     useEffect(() => {
         fetching();
     }, []);
+    console.log(type);
 
 
     return (
         <div className={classes.container}>
             <TableHeader2/>
-            {data.map(element => <Row props={element} key={element.name}/>)}
+            {err && <Title3>{err}</Title3>}
+            {loader ? <Loader/> : data.map(element => <Row props={element} key={element.name}/>)}
         </div>
     );
 };

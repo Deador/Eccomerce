@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Header from "../components/Admin/Header/Header";
 import ProductTable from "../components/Admin/ProductTable/ProductTable";
 import TitleBtn from "../components/Admin/TitleBtn/TitleBtn";
-import Form from "../components/form/Form";
+import Form from "../components/Admin/Form/Form";
 
 const AdminTable = () => {
     const [modale, setModale] = useState(false);
