@@ -2,28 +2,43 @@ import React from 'react';
 import classes from "./itemCart.module.css"
 
 const ItemCart = ({props, remove}) => {
-    // const price=props.count*props.price;
+
+    // const [price, setPrice] = useState(0)
+    //
+    // // Подсчет стоимости
+    // const multiplication = () => {
+    //     const summ = props.price * props.count;
+    //     setPrice(summ);
+    // };
+    //
+    //
+    // useEffect(() => {
+    //     multiplication();
+    // }, [props.count]);
+
+
+    const IMG = `http://localhost:5000/${props.img}`;
+
 
     return (
-        <div className={classes.cart_item} onClick={()=>remove(props)}>
-            <h1>{props.count}</h1>
+        <div className={classes.cart_item} onClick={() => remove(props)}>
             <div className={classes.content}>
                 <img
-                    src={props.img}
+                    src={IMG}
                     width="80px"
                     alt=""
                     className="img_item"
                 />
                 <div className={classes.description}>
-                    {props.description}
+                    {props.name}
                 </div>
             </div>
             <div className={classes.content}>
                 <span className={classes.price}>{props.price} ₽</span>
                 <img
-                     src="/source/icons/icons_menu/Trash_light.svg"
-                     alt=""
-                     className="clear_icon"
+                    src="/source/icons/icons_menu/Trash_light.svg"
+                    alt=""
+                    className="clear_icon"
                 />
             </div>
         </div>

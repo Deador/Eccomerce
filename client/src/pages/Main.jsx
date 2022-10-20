@@ -1,21 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from "react-redux";
 import {useSearch} from "../hooks/useSearch";
-import GetInfo from "../API/ProductInfo";
+import {getAllProduct} from "../API/ProductInfo";
 import Header from "../components/User/header/Header";
 import CardList from "../components/User/card_list/CardList";
+import {useFetching} from "../hooks/useError";
 
 function Main() {
     const [search, setSearch] = useState("");
-    const cards = useSelector(state => state.getCard.items);
+    // const cards = useSelector(state => state.getCard.items);
 
-    const response = async () => {
-        const test = await GetInfo.getTypes();
-    }
+    const [cards, setCards] = useState([]);
+
+    const [err, fetching, loader] = useFetching(async () => {
+        const response = await getAllProduct();
+        setCards(response.data)
+    });
 
     useEffect(() => {
-        response()
-    }, [])
+        fetching()
+    }, []);
 
     // Поиск
     const searchProduct = useSearch(cards, search);

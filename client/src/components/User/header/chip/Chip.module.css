@@ -1,0 +1,14 @@
+.chip {
+    width: 16px;
+    height: 16px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 4px;
+}

@@ -10,7 +10,7 @@ const CardList = ({props}) => {
     const dispath = useDispatch();
     const productInCart = (product) => {
         dispath(addInCart(product));
-    }
+    };
 
     return (
         <section className={classes.row}>

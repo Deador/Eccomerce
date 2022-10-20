@@ -23,7 +23,6 @@ const ProductTable = () => {
     useEffect(() => {
         fetching();
     }, []);
-    console.log(type);
 
 
     return (

@@ -5,7 +5,9 @@ import {useNavigate} from "react-router-dom";
 const Card = ({props, product}) => {
     const navigate = useNavigate();
 
-    const stopPropagation = (e) => {
+    const IMG = `http://localhost:5000/${props.img}`;
+
+    const addProduct = (e) => {
         product(
             {
                 ...props
@@ -16,7 +18,7 @@ const Card = ({props, product}) => {
     return (
         <div className={classes.card_item} onClick={() => navigate(`/products/${props.id}`)}>
             <img
-                src={props.img}
+                src={IMG}
                 alt=""
             />
             {props.sale !== 0 &&
@@ -24,14 +26,14 @@ const Card = ({props, product}) => {
             <div className={classes.card_text_container}>
                 <div className="price_text">
                   <span className={classes.price_card}>{props.price} ₽</span
-                  >{props.old_price !== 0 && <span className={classes.sale_card}>{props.old_price}</span>}
+                  >{props.old_price !== 0 && <span className={classes.sale_card}>{props.old_price} ₽</span>}
                 </div>
                 <div className={classes.card_description}>
-                    {props.description}
+                    {props.name}
                 </div>
             </div>
             <div className={classes.bottom_nav}>
-                <svg onClick={stopPropagation} className={classes.bottom_icon} width="21" height="21"
+                <svg onClick={addProduct} className={classes.bottom_icon} width="21" height="21"
                      viewBox="0 0 21 21"
                      fill="none"
                      xmlns="http://www.w3.org/2000/svg">

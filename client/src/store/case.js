@@ -1,3 +1,2 @@
 export const ADD_PRODUCT="ADD_PRODUCT";
-export const TOTAL_COUNT="TOTAL_COUNT";
 export const REMOVE_ITEM="REMOVE_ITEM";

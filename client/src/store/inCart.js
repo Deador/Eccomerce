@@ -1,8 +1,7 @@
-import {ADD_PRODUCT, REMOVE_ITEM, TOTAL_COUNT} from "./case";
+import {ADD_PRODUCT, REMOVE_ITEM} from "./case";
 
 const defaultState = {
     products: [],
-    totalCount: 0,
 }
 // Редюсер для добавления товара в корзину
 export const inCartReducer = (state = defaultState, action) => {
@@ -36,9 +35,8 @@ export const inCartReducer = (state = defaultState, action) => {
             return {
                 ...state, products: state.products.filter(product => product.id !== action.payload.id)
             }
-        // case TOTAL_COUNT: return {...state, products: action.payload.count*action.payload.price}
         default:
-            return state
+            return state;
     };
 };
 
@@ -93,5 +91,4 @@ export const getItem = (state = stateItem, action) => {
 
 // Функция для добавления в редюсер
 export const addInCart = (payload) => ({type: ADD_PRODUCT, payload});
-export const totalCount = (payload) => ({type: TOTAL_COUNT, payload});
 export const removeItem = (payload) => ({type: REMOVE_ITEM, payload});

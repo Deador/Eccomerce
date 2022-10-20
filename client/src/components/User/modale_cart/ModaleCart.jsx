@@ -9,17 +9,18 @@ const ModaleCart = () => {
     const dispath = useDispatch();
     const cart = useSelector((state) => state.inCart.products);
 
-    // useEffect(() => {
-    //     if (cart.length > 0) {
-    //         console.log("Добавлен товар");
-    //     } else {
-    //         console.log("Корзина пуста");
-    //     }
-    // }, [cart]);
 
-    const removeProduct=(item)=>{
+    const removeProduct = (item) => {
         dispath(removeItem(item))
-    }
+    };
+
+    // Отображение корзины
+    const cartClasses=[classes.modale_cart];
+    if(cart.length>0){
+        cartClasses.push(classes.active)
+    };
+
+    // const [totalCount, setTotalCount] = useState(0);
 
 
     // Обшая стоимость всех товаров в корзине
@@ -33,7 +34,7 @@ const ModaleCart = () => {
     // summation();
 
     return (
-        <section className={classes.modale_cart}>
+        <section className={cartClasses.join(" ")}>
             <div className={classes.flex_container}>
                 <span className={classes.title}>Корзина</span>
                 <button className={classes.clear_cart}>Очистить</button>
@@ -44,11 +45,11 @@ const ModaleCart = () => {
                 ))}
             </div>
             <div>
-                <div className={classes.itog_cost}>
-                    <span>Итого:</span>
-                    <span>0</span>
-                </div>
-                <Button>Оформить заказ</Button>
+                {/*<div className={classes.itog_cost}>*/}
+                {/*    <span>Итого:</span>*/}
+                {/*    <span>0 ₽</span>*/}
+                {/*</div>*/}
+                <Button>В корзину</Button>
             </div>
         </section>
     );

@@ -6,10 +6,15 @@
     border-radius: 12px;
     width: 480px;
     position: absolute;
-    top: 32px;
+    top: 24px;
     right: 0;
     z-index: 1;
     padding: 24px 32px;
+    display: none;
+}
+
+.modale_cart.active{
+    display: block;
 }
 
 .itog_cost {
@@ -35,6 +40,7 @@
 .title {
     font-size: 20px;
     font-weight: 700;
+    margin-bottom: 16px;
 }
 
 .flex_space {
