@@ -1,0 +1,30 @@
+.container {
+display: flex;
+    justify-content: space-between;
+}
+
+.column_container{
+    display: flex;
+}
+
+.icon_container {
+    display: flex;
+}
+
+.icon {
+    margin-right: 24px;
+}
+
+.img {
+    width: 48px;
+    height: 48px;
+}
+
+.text{
+    line-height: 20px;
+    margin-right: 112px;
+}
+
+.text:last-child{
+    margin-right: 0;
+}

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import classes from "./ProductTable.module.css";
-import Row from "./Row/Row";
-import {useFetching} from "../../../hooks/useError";
+import Row from "./row/Row";
+import {useFetching} from "../../../hooks/useLoaderError";
 import GetInfo, {getAllProduct} from "../../../API/ProductInfo";
-import TableHeader2 from "./TableHeader2/TableHeader2";
+import TableHeader from "./tableHeader/TableHeader";
 import Loader from "../../basic/UI/loader/Loader";
 import Title3 from "../../basic/title/Title3";
 
@@ -27,7 +27,7 @@ const ProductTable = () => {
 
     return (
         <div className={classes.container}>
-            <TableHeader2/>
+            <TableHeader/>
             {err && <Title3>{err}</Title3>}
             {loader ? <Loader/> : data.map(element => <Row props={element} key={element.name}/>)}
         </div>

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import Title3 from "../../basic/title/Title3";
-import ButtonRound from "../UI Admin/Button/ButtonRound";
-import classes from "./Form.module.css"
-import GetInfo, {crProduct} from "../../../API/ProductInfo";
-import Input from "../../basic/UI/Input/Input";
-import Select from "../../basic/UI/select/Select";
-import {useFetching} from "../../../hooks/useError";
+import classes from "./CreateProduct.module.css"
+import GetInfo, {crProduct} from "../../../../API/ProductInfo";
+import Input from "../../../basic/UI/Input/Input";
+import ButtonRound from "../../UI Admin/Button/ButtonRound";
+import Select from "../../../basic/UI/select/Select";
+import {useFetching} from "../../../../hooks/useLoaderError";
+import Title3 from "../../../basic/title/Title3";
 
-const Form = ({value, setValue}) => {
+const CreateProduct = ({value, setValue}) => {
 
     const [type, setType] = useState([]);
     const [data, setData] = useState({
@@ -89,4 +89,4 @@ const Form = ({value, setValue}) => {
     );
 };
 
-export default Form;
+export default CreateProduct;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Auth from "../components/Admin/Auth/Auth";
+import Auth from "../components/admin/auth/Auth";
 
 const Admin = () => {
     return (

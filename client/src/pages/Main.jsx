@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useSearch} from "../hooks/useSearch";
 import {getAllProduct} from "../API/ProductInfo";
-import Header from "../components/User/header/Header";
-import CardList from "../components/User/card_list/CardList";
-import {useFetching} from "../hooks/useError";
+import Header from "../components/user/header/Header";
+import CardList from "../components/user/card_list/CardList";
+import {useFetching} from "../hooks/useLoaderError";
 
 function Main() {
     const [search, setSearch] = useState("");

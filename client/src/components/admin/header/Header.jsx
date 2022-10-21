@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import classes from "./Header.module.css"
 import {AuthContext} from "../../../context/context";
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -15,7 +16,7 @@ const Header = () => {
         <div className={classes.header}>
             <div className={classes.container}>
                 <div className={classes.container__nav}>
-                    <div className={classes.nav}>
+                    <Link to="/admin" className={classes.nav}>
                         <svg className={classes.nav_icon} width="24" height="24" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 3V21" stroke="#222529" strokeWidth="1.5" strokeLinecap="round"
@@ -25,8 +26,8 @@ const Header = () => {
                                 stroke="#222529" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         Товары
-                    </div>
-                    <div className={classes.nav}>
+                    </Link>
+                    <Link to="/types" className={classes.nav}>
                         <svg className={classes.nav_icon} width="24" height="24" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -37,7 +38,7 @@ const Header = () => {
                                 stroke="#222529" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         Типы
-                    </div>
+                    </Link>
                 </div>
 
                 <div className={classes.nav} onClick={logOut}>

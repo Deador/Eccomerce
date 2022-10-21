@@ -2,22 +2,15 @@ import React from 'react';
 import classes from "./Row.module.css";
 
 const Row = ({props}) => {
-
-    const IMG = `http://localhost:5000/${props.img}`;
-    const description = `${props.description.slice(0, 51)}...`;
-
     return (
         <div className={classes.container}>
-            <div className={classes.text}><img src={IMG} alt="" className={classes.img}/></div>
-            <div className={classes.text}>{props.name}</div>
-            <div className={classes.text}>{description}</div>
-            <div className={classes.text}>{props.typeId}</div>
-            <div className={classes.text}>{props.price} ₽</div>
-            <div className={classes.text}>{props.old_price} ₽</div>
-            <div className={classes.text}>{props.sale}%</div>
+            <div className={classes.column_container}>
+                <div className={classes.text}>{props.id}</div>
+                <div className={classes.text}>{props.name}</div>
+            </div>
             <div className={classes.icon_container}>
                 <div className={classes.icon}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="icon_pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-outside-1_2138_6619" maskUnits="userSpaceOnUse" x="3" y="4" width="17"
                               height="17"
                               fill="black">
@@ -32,7 +25,7 @@ const Row = ({props}) => {
                     </svg>
                 </div>
                 <div className="">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="icon_pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 15L10 12" stroke="#757575" strokeWidth="1.5" strokeLinecap="round"/>
                         <path d="M14 15L14 12" stroke="#757575" strokeWidth="1.5" strokeLinecap="round"/>
                         <path

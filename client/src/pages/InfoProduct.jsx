@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import GetInfo from "../API/ProductInfo";
-import {useFetching} from "../hooks/useError";
-import Header from "../components/User/header/Header";
-import ProductInformation from "../components/User/ProductInformation";
+import {useFetching} from "../hooks/useLoaderError";
+import Header from "../components/user/header/Header";
+import ProductInformation from "../components/user/ProductInformation";
 import Loader from "../components/basic/UI/loader/Loader";
 
 const InfoProduct = () => {

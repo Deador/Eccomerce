@@ -13,7 +13,6 @@ const Auth = () => {
         localStorage.setItem("auth", "true")
         setAuth(true);
     }
-    // localStorage.clear()
 
     return (
         <div className={classes.container}>

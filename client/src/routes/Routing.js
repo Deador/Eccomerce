@@ -3,7 +3,8 @@ import InfoProduct from "../pages/InfoProduct";
 import React from "react";
 import Admin from "../pages/Admin";
 import PageError from "../pages/PageError";
-import AdminTable from "../pages/AdminTable";
+import AdminProduct from "../pages/AdminProduct";
+import AdminType from "../pages/AdminType";
 
 export const publicRoutes = [{
     id: 1,
@@ -21,12 +22,12 @@ export const publicRoutes = [{
     id: 4,
     path: "/admin",
     element: <Admin/>
-},]
+}]
 
 export const privateRoutes = [{
     id: 1,
     path: "/admin",
-    element: <AdminTable/>
+    element: <AdminProduct/>
 }, {
     id: 2,
     path: "*",
@@ -39,4 +40,10 @@ export const privateRoutes = [{
     id: 4,
     path: "products/:id",
     element: <InfoProduct/>
-}]
+},
+    {
+        id: 5,
+        path: "/types",
+        element: <AdminType/>
+    }
+]
