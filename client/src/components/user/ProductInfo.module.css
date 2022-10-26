@@ -1,0 +1,71 @@
+.container {
+    margin-top: 64px;
+}
+
+.title {
+    padding-right: 64px;
+}
+
+.content_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right_info {
+}
+
+.raiting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.text_review {
+    margin-left: 12px;
+    color: #666666;
+}
+
+
+.cost {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.text_cost {
+    margin-right: 32px;
+    color: #222529;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.text_old_cost {
+    font-size: 18px;
+    color: #666666;
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.points_text {
+    color: #666666;
+    margin-left: 8px;
+}
+
+.delivery {
+    margin-top: 24px;
+}
+
+.delivery_item {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.text_delivery {
+    width: 376px;
+    margin-left: 8px;
+}

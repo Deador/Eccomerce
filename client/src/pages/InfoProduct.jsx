@@ -10,11 +10,6 @@ const InfoProduct = () => {
 
     const params = useParams();
     const [info, setInfo] = useState({});
-    // const getProduct = async () => {
-    //     const response = await fetch("http://localhost:5000/api/product/" + params.id)
-    //     const result = await response.json()
-    //     setInfo(result)
-    // }
 
     // Кастомный хук для обработки API и отображения ошибок
     const [err, fetching, loader] = useFetching(async () => {

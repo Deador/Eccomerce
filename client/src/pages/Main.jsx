@@ -4,6 +4,7 @@ import {getAllProduct} from "../API/ProductInfo";
 import Header from "../components/user/header/Header";
 import CardList from "../components/user/card_list/CardList";
 import {useFetching} from "../hooks/useLoaderError";
+import Banner from "../components/user/main_banner/Banner";
 
 function Main() {
     const [search, setSearch] = useState("");
@@ -26,6 +27,7 @@ function Main() {
     return (
         <div className="App">
             <Header setSearch={setSearch}/>
+            <Banner/>
             <CardList props={searchProduct}/>
         </div>
     );

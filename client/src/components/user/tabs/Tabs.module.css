@@ -1,0 +1,24 @@
+.group_items {
+    display: flex;
+}
+
+.tab_content {
+    margin-top: 24px;
+    line-height: 20px;
+
+}
+
+.container{
+    position: relative;
+}
+
+.container:after {
+    content: "";
+    width: 1200px;
+    height: 2px;
+    display: block;
+    background-color: #E3CAFF;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}

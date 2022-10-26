@@ -1,0 +1,11 @@
+.item{
+    margin-right: 16px;
+    color: #222529;
+    cursor: pointer;
+    height: 32px;
+}
+
+.item.active{
+    border-bottom: 3px solid #6F15D2;
+    border-radius: 2px;
+}
