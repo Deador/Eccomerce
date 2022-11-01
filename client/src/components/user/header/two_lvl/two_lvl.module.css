@@ -20,6 +20,7 @@
     flex-direction: column;
     text-align: center;
     padding-left: 16px;
+    cursor: pointer;
 }
 
 .search {
@@ -50,7 +51,8 @@
     margin-bottom: 5px;
     border: none;
 }
-.line:last-child{
+
+.line:last-child {
     margin-bottom: 0;
 }
 
@@ -63,7 +65,7 @@
     color: #77727c;
     font-size: 12px;
     line-height: 1;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 .count_product {

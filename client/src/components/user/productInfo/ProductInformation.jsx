@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from "./ProductInfo.module.css"
-import Button from "../basic/UI/button/Button";
-import Title from "../basic/title/Title";
-import Tabs from "./tabs/Tabs";
+import Title from "../../basic/title/Title";
+import Button from "../../basic/UI/button/Button";
+import Tabs from "../tabs/Tabs";
 
 const ProductInformation = ({info}) => {
     const IMG = `http://localhost:5000/${info.img}`;

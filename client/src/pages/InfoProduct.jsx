@@ -3,8 +3,8 @@ import {useParams} from "react-router-dom";
 import GetInfo from "../API/ProductInfo";
 import {useFetching} from "../hooks/useLoaderError";
 import Header from "../components/user/header/Header";
-import ProductInformation from "../components/user/ProductInformation";
 import Loader from "../components/basic/UI/loader/Loader";
+import ProductInformation from "../components/user/productInfo/ProductInformation";
 
 const InfoProduct = () => {
 

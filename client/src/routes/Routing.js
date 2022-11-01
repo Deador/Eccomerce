@@ -1,10 +1,11 @@
 import Main from "../pages/Main";
 import InfoProduct from "../pages/InfoProduct";
 import React from "react";
-import Admin from "../pages/Admin";
+import AuthAdmin from "../pages/AuthAdmin";
 import PageError from "../pages/PageError";
 import AdminProduct from "../pages/AdminProduct";
 import AdminType from "../pages/AdminType";
+import Cart from "../pages/Cart";
 
 export const publicRoutes = [{
     id: 1,
@@ -21,7 +22,11 @@ export const publicRoutes = [{
 }, {
     id: 4,
     path: "/admin",
-    element: <Admin/>
+    element: <AuthAdmin/>
+},{
+    id: 5,
+    path: "/cart",
+    element: <Cart/>
 }]
 
 export const privateRoutes = [{
@@ -45,5 +50,9 @@ export const privateRoutes = [{
         id: 5,
         path: "/types",
         element: <AdminType/>
+    }, {
+        id: 6,
+        path: "/cart",
+        element: <Cart/>
     }
 ]

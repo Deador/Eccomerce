@@ -4,6 +4,7 @@ import ItemCart from "./item_cart/ItemCart";
 import {useDispatch, useSelector} from "react-redux";
 import {removeItem} from "../../../store/inCart";
 import Button from "../../basic/UI/button/Button";
+import {useNavigate} from "react-router-dom";
 
 const ModaleCart = () => {
     const dispath = useDispatch();
@@ -15,10 +16,11 @@ const ModaleCart = () => {
     };
 
     // Отображение корзины
-    const cartClasses=[classes.modale_cart];
-    if(cart.length>0){
+    const cartClasses = [classes.modale_cart];
+    if (cart.length > 0) {
         cartClasses.push(classes.active)
-    };
+    }
+    ;
 
     // const [totalCount, setTotalCount] = useState(0);
 
@@ -32,6 +34,13 @@ const ModaleCart = () => {
     //   });
     // };
     // summation();
+
+    const navigate=useNavigate();
+
+    const goPage = () => {
+        return navigate("/cart")
+    };
+
 
     return (
         <section className={cartClasses.join(" ")}>
@@ -49,7 +58,7 @@ const ModaleCart = () => {
                 {/*    <span>Итого:</span>*/}
                 {/*    <span>0 ₽</span>*/}
                 {/*</div>*/}
-                <Button>В корзину</Button>
+                <Button onClick={goPage}>В корзину</Button>
             </div>
         </section>
     );

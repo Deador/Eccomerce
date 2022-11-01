@@ -46,9 +46,28 @@
 .bottom_nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 16px;
 }
 
 .bottom_icon{
     margin-right: 24px;
+}
+
+.btn_cart{
+    background: #da1934;
+    padding: 12px 16px;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 16px;
+    font-size: 14px;
+}
+
+.btn_cart.active{
+    background: #222529;
+    padding: 12px 16px;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 16px;
+    font-size: 14px;
 }

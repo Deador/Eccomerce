@@ -15,7 +15,6 @@ body {
     font-family: "Montserrat", sans-serif;
     color: #222529;
     line-height: 1;
-
 }
 
 a {
@@ -26,6 +25,10 @@ button, a {
     cursor: pointer;
 }
 
-.icon_pointer{
+.icon_pointer {
     cursor: pointer;
+}
+
+.title_padd {
+    margin-top: 98px;
 }
