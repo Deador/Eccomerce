@@ -7,25 +7,20 @@ const Card = ({props, product}) => {
     const IMG = `http://localhost:5000/${props.img}`;
     const [active, setActive] = useState(false);
 
-
     const addProduct = (e) => {
+        e.stopPropagation();
         product(
             {
-                ...props
+                ...props, count: 1
             });
-        e.stopPropagation();
         setActive(true);
-        if (active) {
-            return navigate("/cart")
-        }
     };
 
+    const redirectInCart = (e) => {
+        e.stopPropagation();
+        return navigate("/cart")
+    };
 
-    const btnClass = [classes.btn_cart];
-    if (active) {
-        btnClass.push(classes.active)
-    }
-    ;
 
     return (
         <div className={classes.card_item} onClick={() => navigate(`/products/${props.id}`)}>
@@ -45,8 +40,8 @@ const Card = ({props, product}) => {
                 </div>
             </div>
             <div className={classes.bottom_nav}>
-                <button className={btnClass.join(" ")}
-                        onClick={addProduct}>{active ? "В корзине" : "В корзину"}</button>
+                {active ? <button className={classes.active} onClick={redirectInCart}>В корзине</button> :
+                    <button className={classes.btn_cart} onClick={addProduct}>В корзину</button>}
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd"
                           d="M14.584 2.5C12.2923 2.5 11.0382 3.6975 10.0007 4.75C8.96315 3.6975 7.70898 2.5 5.41732 2.5C2.36148 2.5 0.833984 5.05917 0.833984 7.75C0.833984 12.2808 6.18148 16 10.0007 17.5C13.8198 16 19.1673 12.2808 19.1673 7.75C19.1673 5.05917 17.6398 2.5 14.584 2.5Z"

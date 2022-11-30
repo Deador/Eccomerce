@@ -19,6 +19,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #222529;
 }
 
 button, a {
@@ -30,5 +31,5 @@ button, a {
 }
 
 .title_padd {
-    margin-top: 98px;
+    margin-top: 140px;
 }

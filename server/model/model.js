@@ -24,13 +24,13 @@ const Device = sequlize.define("device", {
     old_price: {type: DataTypes.INTEGER},
     img: {type: DataTypes.STRING, allowNull: false},
     sale: {type: DataTypes.INTEGER},
+    rate: {type: DataTypes.INTEGER, defaultValue: 0}
 })
 
 const DeviceInfo = sequlize.define("device_info", {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     description: {type: DataTypes.STRING, allowNull: false},
-    title: {type: DataTypes.STRING, allowNull: false},
-    rate: {type: DataTypes.INTEGER, defaultValue: 0}
+    title: {type: DataTypes.STRING, allowNull: false}
 })
 
 const Type = sequlize.define("type", {

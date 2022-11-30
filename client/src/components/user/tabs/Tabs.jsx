@@ -12,7 +12,6 @@ const Tabs = () => {
         setTab(index)
         setContent(index)
     }
-    console.log(content)
 
     const [test, setTest] = useState([])
     const find = () => {

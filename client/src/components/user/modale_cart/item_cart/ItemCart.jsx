@@ -16,12 +16,11 @@ const ItemCart = ({props, remove}) => {
     //     multiplication();
     // }, [props.count]);
 
-
     const IMG = `http://localhost:5000/${props.img}`;
 
 
     return (
-        <div className={classes.cart_item} onClick={() => remove(props)}>
+        <div className={classes.cart_item}>
             <div className={classes.content}>
                 <img
                     src={IMG}
@@ -35,11 +34,11 @@ const ItemCart = ({props, remove}) => {
             </div>
             <div className={classes.content}>
                 <span className={classes.price}>{props.price} ₽</span>
-                <img
+                <img onClick={()=>remove(props)}
                     src="/source/icons/icons_menu/Trash_light.svg"
                     alt=""
                     className="clear_icon"
-                />
+                    />
             </div>
         </div>
     );

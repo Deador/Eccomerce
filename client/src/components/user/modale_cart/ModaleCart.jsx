@@ -2,17 +2,17 @@ import React from "react";
 import classes from "./ModaleCart.module.css";
 import ItemCart from "./item_cart/ItemCart";
 import {useDispatch, useSelector} from "react-redux";
-import {removeItem} from "../../../store/inCart";
 import Button from "../../basic/UI/button/Button";
 import {useNavigate} from "react-router-dom";
+import {removeItem} from "../../../store/toolkit/toolkitReducer";
 
 const ModaleCart = () => {
     const dispath = useDispatch();
     const cart = useSelector((state) => state.inCart.products);
 
 
-    const removeProduct = (item) => {
-        dispath(removeItem(item))
+    const removeProduct = (product) => {
+        dispath(removeItem(product))
     };
 
     // Отображение корзины
@@ -28,7 +28,7 @@ const ModaleCart = () => {
     // Обшая стоимость всех товаров в корзине
     // let totalCount = 0;
     // const summation = () => {
-    //   cart.forEach((item) => {
+    //   card.forEach((item) => {
     //     const countItem = item.price * item.count;
     //     totalCount += countItem;
     //   });
@@ -54,7 +54,7 @@ const ModaleCart = () => {
                 ))}
             </div>
             <div>
-                {/*<div className={classes.itog_cost}>*/}
+                {/*<div className={classes.itog_price}>*/}
                 {/*    <span>Итого:</span>*/}
                 {/*    <span>0 ₽</span>*/}
                 {/*</div>*/}

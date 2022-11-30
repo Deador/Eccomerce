@@ -44,6 +44,27 @@ class ProductController {
 
         return res.json(device);
     }
+
+
+    async editProduct(req, res) {
+        if (!req.body) {
+            return res.sendStatus(400)
+        }
+        let {id, name, description, price, old_price, typeId, sale} = req.body; // Достаю параметры из тела запроса
+
+        const updateDevice = await Device.update({
+            where: {id},
+            include: [{model: Device, name, description, price, old_price, typeId, sale}]
+        })
+
+
+        // let {name, description, price, old_price, typeId, sale} = req.body; // Достаю параметры из тела запроса
+        //
+        // const updateDevice = await Device.update(req.body.id, name, description, price, old_price, typeId, sale)
+        return res.json(updateDevice)
+    }
+
 }
 
-module.exports = new ProductController();
+module
+    .exports = new ProductController();
