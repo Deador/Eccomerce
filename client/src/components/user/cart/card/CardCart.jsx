@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import classes from "./CardCart.module.css";
 import Counter from "../../counter/Counter";
 import {useDispatch} from "react-redux";
-import {decrement, increment} from "../../../../store/toolkit/toolkitReducer";
+import {decrement, increment} from "../../../../store/toolkitReducer";
 
 
 const CardCart = ({props}) => {

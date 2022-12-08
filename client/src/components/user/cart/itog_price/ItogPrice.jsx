@@ -7,6 +7,7 @@ import {useSelector} from "react-redux";
 const ItogPrice = () => {
     const cart = useSelector(state => state.inCart.products);
 
+    // Подсчет общей суммы и количества товаров в корзине
     const totalPriceQuantity = () => {
         let price = 0;
         let quantity = 0;
@@ -25,7 +26,7 @@ const ItogPrice = () => {
                 <div className={classes.text_mod}>3090 ₽</div>
             </div>
             <div className={classes.text_container}>
-                {cart.length > 0 && <div className={classes.mainText}>{totalPriceQuantity().quantity} товар</div>}
+                {cart.length > 0 && <div className={classes.mainText}>{totalPriceQuantity().quantity} {totalPriceQuantity().quantity===1?"товар":"товара"}</div>}
                 <div className={classes.mainText_mod}>{totalPriceQuantity().price} ₽</div>
             </div>
             <Button>Перейти к оформлению</Button>

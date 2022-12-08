@@ -43,7 +43,7 @@ const ProductInformation = ({info}) => {
                             <circle cx="16" cy="12" r="6.25" stroke="#CCCCCC" strokeWidth="1.5"/>
                             <circle cx="8" cy="12" r="6.25" fill="white" stroke="#CCCCCC" strokeWidth="1.5"/>
                         </svg>
-                        <div className={classes.points_text}>129 бонусов за покупку</div>
+                        <p className={classes.points_text}>129 бонусов за покупку</p>
 
                     </div>
                     <Button>Купить</Button>
@@ -56,8 +56,8 @@ const ProductInformation = ({info}) => {
                                       stroke="#CCCCCC" strokeWidth="1.5"/>
                             </svg>
 
-                            <div className={classes.text_delivery}>Самовывоз из 11 пунктов выдачи, 2-36 дней, от 161 ₽
-                            </div>
+                            <p className={classes.text_delivery}>Самовывоз из 11 пунктов выдачи, 2-36 дней, от 161 ₽
+                            </p>
                         </div>
                         <div className={classes.delivery_item}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -66,7 +66,7 @@ const ProductInformation = ({info}) => {
                                     d="M6 13V5.69371C6 5.37716 6 5.21888 6.10382 5.14405C6.20764 5.06921 6.3578 5.11927 6.65811 5.21937L16.577 8.52566C17.1653 8.72176 17.4594 8.81981 17.4594 9C17.4594 9.18019 17.1653 9.27824 16.577 9.47434L6 13ZM6 13V18V19"
                                     stroke="#CCD2E3" strokeWidth="1.5" strokeLinecap="round"/>
                             </svg>
-                            <div className={classes.text_delivery}>Почта России, от 3 дней, от 290 ₽</div>
+                            <p className={classes.text_delivery}>Почта России, от 3 дней, от 290 ₽</p>
                         </div>
                     </div>
                 </div>

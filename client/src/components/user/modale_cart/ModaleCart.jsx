@@ -4,7 +4,7 @@ import ItemCart from "./item_cart/ItemCart";
 import {useDispatch, useSelector} from "react-redux";
 import Button from "../../basic/UI/button/Button";
 import {useNavigate} from "react-router-dom";
-import {removeItem} from "../../../store/toolkit/toolkitReducer";
+import {removeItem} from "../../../store/toolkitReducer";
 
 const ModaleCart = () => {
     const dispath = useDispatch();
@@ -19,21 +19,7 @@ const ModaleCart = () => {
     const cartClasses = [classes.modale_cart];
     if (cart.length > 0) {
         cartClasses.push(classes.active)
-    }
-    ;
-
-    // const [totalCount, setTotalCount] = useState(0);
-
-
-    // Обшая стоимость всех товаров в корзине
-    // let totalCount = 0;
-    // const summation = () => {
-    //   card.forEach((item) => {
-    //     const countItem = item.price * item.count;
-    //     totalCount += countItem;
-    //   });
-    // };
-    // summation();
+    };
 
     const navigate=useNavigate();
 
@@ -45,7 +31,7 @@ const ModaleCart = () => {
     return (
         <section className={cartClasses.join(" ")}>
             <div className={classes.flex_container}>
-                <span className={classes.title}>Корзина</span>
+                <div className={classes.title}>Корзина</div>
                 <button className={classes.clear_cart}>Очистить</button>
             </div>
             <div className={classes.items_container}>
@@ -54,10 +40,6 @@ const ModaleCart = () => {
                 ))}
             </div>
             <div>
-                {/*<div className={classes.itog_price}>*/}
-                {/*    <span>Итого:</span>*/}
-                {/*    <span>0 ₽</span>*/}
-                {/*</div>*/}
                 <Button onClick={goPage}>В корзину</Button>
             </div>
         </section>

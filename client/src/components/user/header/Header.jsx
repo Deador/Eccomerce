@@ -6,7 +6,6 @@ import TwoLvl from "./two_lvl/twoLvlHeader";
 import {useSelector} from "react-redux";
 
 const Header = ({setSearch}) => {
-    const cart = useSelector(state => state.inCart.products);
     return (
         <header className={classes.header}>
             <OneLvl/>

@@ -29,11 +29,11 @@ const Card = ({props, product}) => {
                 alt="Image"
             />
             {props.sale !== 0 &&
-                <div className={classes.sale}><span className={classes.number_sale}>-{props.sale}%</span></div>}
+                <div className={classes.sale}><div className={classes.number_sale}>-{props.sale}%</div></div>}
             <div className={classes.card_text_container}>
-                <div className="price_text">
-                  <span className={classes.price_card}>{props.price} ₽</span
-                  >{props.old_price !== 0 && <span className={classes.sale_card}>{props.old_price} ₽</span>}
+                <div className={classes.price_text}>
+                  <div className={classes.price_card}>{props.price} ₽</div
+                  >{props.old_price !== 0 && <div className={classes.sale_card}>{props.old_price} ₽</div>}
                 </div>
                 <div className={classes.card_description}>
                     {props.name}

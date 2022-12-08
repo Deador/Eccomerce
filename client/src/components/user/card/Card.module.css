@@ -5,6 +5,12 @@
     margin-bottom: 32px;
 }
 
+.price_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .price_card {
     font-size: 32px;
     font-weight: 600;

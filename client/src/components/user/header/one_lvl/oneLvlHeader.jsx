@@ -10,7 +10,7 @@ const OneLvl = () => {
                             src="/source/icons/location.svg"
                             alt=""
                             className={classes.icon_loc}
-                        /><span className="text_header_one">Москва</span>
+                        /><div className="text_header_one">Москва</div>
                     </div>
                 <div className={classes.icon_loc}>
                     <img
@@ -27,10 +27,10 @@ const OneLvl = () => {
                     />
                 </div>
                 <div className={classes.phone_number}>
-                    <span>8 800 333-01-82</span>
+                    <div>8 800 333-01-82</div>
                 </div>
             </div>
-            <span className={classes.link_map}>Карта магазинов</span>
+            <a href="#" className={classes.link_map}>Карта магазинов</a>
         </div>
     );
 };

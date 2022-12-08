@@ -4,7 +4,7 @@ import classes from "./CardList.module.css"
 import {useDispatch} from "react-redux";
 
 import Title from "../../basic/title/Title";
-import {addInCart} from "../../../store/toolkit/toolkitReducer";
+import {addInCart} from "../../../store/toolkitReducer";
 
 const CardList = ({props}) => {
 
