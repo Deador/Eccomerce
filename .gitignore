@@ -4,10 +4,6 @@
 /node_modules
 /client/node_modules
 /server/node_modules
-<<<<<<< HEAD
-
-=======
->>>>>>> 7dc2197ca972d6b37362ebf50ba0197289aa96ef
 
 # testing
 /coverage
