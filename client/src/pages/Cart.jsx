@@ -9,7 +9,7 @@ const Cart = () => {
             <HeaderCart/>
             <div className="title_padd">
                 <Title props="Корзина"/>
- <CartContent/>
+                <CartContent/>
             </div>
         </div>
     );

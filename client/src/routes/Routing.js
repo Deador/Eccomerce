@@ -6,7 +6,7 @@ import PageError from "../pages/PageError";
 import AdminProduct from "../pages/AdminProduct";
 import AdminType from "../pages/AdminType";
 import Cart from "../pages/Cart";
-import AuthClient from "../pages/AuthClient";
+import Test from "../pages/Test";
 
 export const publicRoutes = [{
     id: 1,
@@ -30,8 +30,8 @@ export const publicRoutes = [{
     element: <Cart/>
 }, {
     id: 6,
-    path: "/login",
-    element: <AuthClient/>
+    path: "/registration",
+    element: <Test/>
 }]
 
 export const privateRoutes = [{
@@ -62,7 +62,7 @@ export const privateRoutes = [{
     },
     {
         id: 7,
-        path: "/login",
-        element: <AuthClient/>
+        path: "/registration",
+        element: <Test/>
     }
 ]

@@ -4,6 +4,7 @@ import ModaleCart from "../../modale_cart/ModaleCart";
 import {useSelector} from "react-redux";
 import Chip from "../chip/Chip";
 import {Link} from "react-router-dom";
+import Auth from "../../auth/Auth";
 
 const TwoLvl = ({setSearch}) => {
     const cart = useSelector(state => state.inCart.products);
@@ -16,6 +17,9 @@ const TwoLvl = ({setSearch}) => {
     const onMouseLeave = () => {
         setMouse(false);
     };
+
+    // Состояние для отображения пупапа логина
+    const [modale, setModale] = useState(false);
 
     return (
         <div className={classes.header_row}>
@@ -81,7 +85,7 @@ const TwoLvl = ({setSearch}) => {
                     </svg>
                     <div className={classes.text_icon}>Избранное</div>
                 </Link>
-                <Link className={classes.item_nav}>
+                <Link className={classes.item_nav} onClick={() => setModale(true)}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M10.0007 9.16659C12.3007 9.16659 14.1673 7.30075 14.1673 4.99992C14.1673 2.69909 12.3007 0.833252 10.0007 0.833252C7.70065 0.833252 5.83398 2.69909 5.83398 4.99992C5.83398 7.30075 7.70065 9.16659 10.0007 9.16659Z"
@@ -103,6 +107,7 @@ const TwoLvl = ({setSearch}) => {
                     </div>
                     {cart.length > 0 && <Chip count={cart.length}/>}
                     {mouse && <ModaleCart/>}
+                    {modale && <Auth modale={modale} setModale={setModale}/>}
                 </div>
             </div>
         </div>
