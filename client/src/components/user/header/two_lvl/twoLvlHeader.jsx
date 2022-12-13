@@ -4,9 +4,8 @@ import ModaleCart from "../../modale_cart/ModaleCart";
 import {useSelector} from "react-redux";
 import Chip from "../chip/Chip";
 import {Link} from "react-router-dom";
-import Auth from "../../auth/Auth";
 
-const TwoLvl = ({setSearch}) => {
+const TwoLvl = ({setSearch,setModale}) => {
     const cart = useSelector(state => state.inCart.products);
 
     // Наведение на иконку корзина открывает корзину
@@ -17,9 +16,6 @@ const TwoLvl = ({setSearch}) => {
     const onMouseLeave = () => {
         setMouse(false);
     };
-
-    // Состояние для отображения пупапа логина
-    const [modale, setModale] = useState(false);
 
     return (
         <div className={classes.header_row}>
@@ -107,7 +103,6 @@ const TwoLvl = ({setSearch}) => {
                     </div>
                     {cart.length > 0 && <Chip count={cart.length}/>}
                     {mouse && <ModaleCart/>}
-                    {modale && <Auth modale={modale} setModale={setModale}/>}
                 </div>
             </div>
         </div>

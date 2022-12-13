@@ -4,11 +4,11 @@ import ThreeLvl from "./three_lvl/threeLvl";
 import OneLvl from "./one_lvl/oneLvlHeader";
 import TwoLvl from "./two_lvl/twoLvlHeader";
 
-const Header = ({setSearch}) => {
+const Header = ({setSearch,setModale}) => {
     return (
         <header className={classes.header}>
             <OneLvl/>
-            <TwoLvl setSearch={setSearch}/>
+            <TwoLvl setSearch={setSearch} setModale={setModale}/>
             <ThreeLvl/>
         </header>
     );

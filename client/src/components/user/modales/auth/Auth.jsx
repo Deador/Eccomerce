@@ -1,11 +1,10 @@
 import React from 'react';
 import classes from "./Auth.module.css"
-import Title3 from "../../basic/title/Title3";
-import Input from "../../basic/UI/Input/Input";
-import Button from "../../basic/UI/button/Button";
-import {Link} from "react-router-dom";
+import Title3 from "../../../basic/title/Title3";
+import Input from "../../../basic/UI/Input/Input";
+import Button from "../../../basic/UI/button/Button";
 
-const AuthClient = ({modale, setModale}) => {
+const AuthClient = ({modale, setModale, onReg}) => {
     const cl = [classes.modale]
 
     if (modale) {
@@ -29,7 +28,7 @@ const AuthClient = ({modale, setModale}) => {
                 <Input placeholder="Введите почту"/>
                 <Input placeholder="Введите пароль"/>
                 <div>
-                    <Link to="/registration">У вас нет аккаунта?</Link>
+                    <div onClick={() => onReg(true)}>У вас нет аккаунта?</div>
                 </div>
                 <Button>Войти</Button>
             </div>
