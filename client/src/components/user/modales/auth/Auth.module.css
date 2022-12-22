@@ -25,3 +25,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.link{
+    cursor: pointer;
+    margin-bottom: 24px;
+}

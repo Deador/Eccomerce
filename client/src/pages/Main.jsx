@@ -7,6 +7,7 @@ import {useFetching} from "../hooks/useLoaderError";
 import Banner from "../components/user/main_banner/Banner";
 import Registration from "../components/user/modales/registration/Registration";
 import Auth from "../components/user/modales/auth/Auth";
+import {$host} from "../API";
 
 function Main() {
     const [search, setSearch] = useState("");

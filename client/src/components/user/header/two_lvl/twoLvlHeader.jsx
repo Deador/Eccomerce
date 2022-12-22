@@ -8,6 +8,8 @@ import {Link} from "react-router-dom";
 const TwoLvl = ({setSearch,setModale}) => {
     const cart = useSelector(state => state.inCart.products);
 
+    const user = useSelector(state => state.inCart.userSignIn);
+
     // Наведение на иконку корзина открывает корзину
     const [mouse, setMouse] = useState(false);
     const onMouseEnter = () => {
@@ -89,7 +91,7 @@ const TwoLvl = ({setSearch,setModale}) => {
                         <path d="M17.5 19V16.875C17.5 14.4675 14.125 12.5 10 12.5C5.875 12.5 2.5 14.4675 2.5 16.875V19"
                               stroke="#222529" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    <div className={classes.text_icon}>Войти</div>
+                    <div className={classes.text_icon}>{user.id?user.email:"Войти"}</div>
                 </Link>
                 <div onMouseEnter={onMouseEnter}
                      onMouseLeave={onMouseLeave}>

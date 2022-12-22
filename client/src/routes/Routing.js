@@ -30,7 +30,7 @@ export const publicRoutes = [{
     element: <Cart/>
 }, {
     id: 6,
-    path: "/registration",
+    path: "/test",
     element: <Test/>
 }]
 
@@ -62,7 +62,7 @@ export const privateRoutes = [{
     },
     {
         id: 7,
-        path: "/registration",
+        path: "/test",
         element: <Test/>
     }
 ]

@@ -19,7 +19,7 @@ class UserControllers {
         // Далее проверяю есть ли пользователь с таким email
         const candidate = await User.findOne({where: {email}})
         if (candidate) {
-            return (console.log("Пользователь с таким email уже существует"))
+            return (res.json({message: "Пользователь уже существует"}))
         }
         // Если пользователь не существует, то шифруем пароль с помощью bcypt
         const hashPassword = await bcypt.hash(password, 5)
@@ -37,7 +37,7 @@ class UserControllers {
         const {email, password} = req.body;
         const user = await User.findOne({where: {email}})
         if (!user) {
-            return (res.json({message: "Пользователь не найден"}))
+            return (res.json({message: "Некорректный email или пароль"}))
         }
         // Сравниваю два пароля, тот что захеширован и тот что указан в запросе
         let comparePassword = bcypt.compareSync(password, user.password);

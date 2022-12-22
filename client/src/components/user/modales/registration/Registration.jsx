@@ -1,20 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from "./Registration.module.css"
 import Title3 from "../../../basic/title/Title3";
 import Input from "../../../basic/UI/Input/Input";
 import Button from "../../../basic/UI/button/Button";
+import {registration} from "../../../../API/Login";
 
 const Registration = ({modale, setModale, onReg}) => {
     const cl = [classes.modale]
 
     if (modale) {
         cl.push(classes.active)
-    };
+    }
+    ;
 
     // При закрытии пупапа переключение обратно на форму входа
     const onLogin = () => {
-        setModale(false)
-        onReg(false)
+        setModale(false);
+        onReg(false);
+    };
+
+    // Регистрация нового пользователя
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+
+    const createUser = async () => {
+        try {
+            const response = await registration(email, password);
+            console.log(response)
+            setPassword("");
+            setEmail("");
+        } catch (e) {
+            alert(e.response.data.message)
+        }
     };
 
     return (
@@ -30,13 +48,13 @@ const Registration = ({modale, setModale, onReg}) => {
                               strokeLinejoin="round"/>
                     </svg>
                 </div>
-                <Input placeholder="Введите почту"/>
-                <Input placeholder="Введите пароль"/>
-                <div>
-                    <div onClick={() => onReg(false)}>Есть аккаунт?</div>
-                </div>
-                <Button>Зарегистрироваться</Button>
+                <Input placeholder="Введите почту" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                <Input placeholder="Введите пароль"
+                       onChange={(e) => setPassword(e.target.value)} value={password}/>
+                <div className={classes.link} onClick={() => onReg(false)}>Есть аккаунт?</div>
+                <Button onClick={createUser}>Зарегистрироваться</Button>
             </div>
+
         </div>
     );
 };
