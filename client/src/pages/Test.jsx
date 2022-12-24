@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {removeAuth, setAuth} from "../store/toolkitReducer";
+import {userAuth} from "../store/toolkitReducer";
 import Button from "../components/basic/UI/button/Button";
 
 const Test = () => {
@@ -8,11 +8,11 @@ const Test = () => {
     const auth = useSelector(state => state.inCart.auth);
 
     const click = () => {
-        dispath(setAuth(true));
+        dispath(userAuth(true));
     }
 
     const logout = () => {
-        dispath(removeAuth(false));
+        dispath(userAuth(false));
     }
 
     console.log(auth)

@@ -4,8 +4,8 @@ import Title3 from "../../../basic/title/Title3";
 import Input from "../../../basic/UI/Input/Input";
 import Button from "../../../basic/UI/button/Button";
 import {login} from "../../../../API/Login";
-import {useDispatch, useSelector} from "react-redux";
-import {setAuth, setUser} from "../../../../store/toolkitReducer";
+import {useDispatch} from "react-redux";
+import {userAuth} from "../../../../store/toolkitReducer";
 
 const AuthClient = ({modale, setModale, onReg}) => {
     const cl = [classes.modale];
@@ -13,12 +13,8 @@ const AuthClient = ({modale, setModale, onReg}) => {
     if (modale) {
         cl.push(classes.active)
     }
-    ;
-
 
     const dispath = useDispatch();
-    const auth = useSelector(state => state.inCart.auth);
-    const user = useSelector(state => state.inCart.userSignIn);
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -26,8 +22,7 @@ const AuthClient = ({modale, setModale, onReg}) => {
     const signIn = async () => {
         try {
             const result = await login(email, password);
-            dispath(setAuth())
-            dispath(setUser(result))
+            dispath(userAuth(true))
             setModale(false);
         } catch (e) {
             alert(e.message);
@@ -36,8 +31,6 @@ const AuthClient = ({modale, setModale, onReg}) => {
             setPassword("");
         }
     };
-
-    console.log(user)
 
 
     return (

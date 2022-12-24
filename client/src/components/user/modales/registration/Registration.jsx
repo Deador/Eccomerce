@@ -27,11 +27,11 @@ const Registration = ({modale, setModale, onReg}) => {
     const createUser = async () => {
         try {
             const response = await registration(email, password);
-            console.log(response)
-            setPassword("");
-            setEmail("");
         } catch (e) {
             alert(e.response.data.message)
+        } finally {
+            setEmail("");
+            setPassword("");
         }
     };
 

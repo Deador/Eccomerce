@@ -25,11 +25,8 @@ const cartReducer = createSlice({
             const removeItem = state.products.filter(p => p.id !== action.payload.id)
             state.products = removeItem;
         },
-        setAuth(state) {
-            state.auth = true;
-        },
-        removeAuth(state) {
-            state.auth = false;
+        userAuth(state, action) {
+            state.auth = action.payload;
         },
         setUser(state, action) {
             state.userSignIn = action.payload;
@@ -38,4 +35,4 @@ const cartReducer = createSlice({
 })
 
 export const reducer = cartReducer.reducer
-export const {addInCart, increment, decrement, removeItem, setAuth, removeAuth, setUser} = cartReducer.actions
+export const {addInCart, increment, decrement, removeItem, userAuth, setUser} = cartReducer.actions

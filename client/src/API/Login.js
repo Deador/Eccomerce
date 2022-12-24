@@ -1,4 +1,3 @@
-import axios from "axios";
 import {$authHost, $host} from "./index";
 import jwtDecode from "jwt-decode";
 
@@ -17,7 +16,7 @@ export const login = async (email, password) => {
 
 // Проверка токена на валидность при перезагрузки страницы
 export const check = async () => {
-    const response = await $authHost.post("api/user/auth");
+    const response = await $authHost.get("api/user/auth");
     localStorage.setItem("token", response.data.token)
     return jwtDecode(response.data.token);
 };
