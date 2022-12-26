@@ -39,7 +39,7 @@ const ModaleCart = () => {
                     <ItemCart props={item} key={item.id} remove={removeProduct}/>
                 ))}
             </div>
-            <div>
+            <div className={classes.btn__container}>
                 <Button onClick={goPage}>В корзину</Button>
             </div>
         </section>

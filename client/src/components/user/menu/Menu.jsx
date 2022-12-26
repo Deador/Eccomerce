@@ -6,11 +6,11 @@ import {setUser, userAuth} from "../../../store/toolkitReducer";
 const Menu = () => {
     const dispath = useDispatch();
 
-    const logOut = () => {
+    const logOut = (e) => {
         dispath(userAuth(false));
         dispath(setUser({}));
+        e.stopPropagation();
         localStorage.removeItem("token");
-
     }
 
     return (

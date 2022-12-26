@@ -4,21 +4,30 @@ import ModaleCart from "../../modale_cart/ModaleCart";
 import {useSelector} from "react-redux";
 import Chip from "../chip/Chip";
 import {Link} from "react-router-dom";
+import Menu from "../../menu/Menu";
 
-const TwoLvl = ({setSearch,setModale}) => {
+const TwoLvl = ({setSearch, setModale}) => {
     const cart = useSelector(state => state.inCart.products);
-
     const user = useSelector(state => state.inCart.userSignIn);
+    const auth = useSelector(state => state.inCart.auth);
 
-    // Наведение на иконку корзина открывает корзину
-    const [mouse, setMouse] = useState(false);
-    const onMouseEnter = () => {
-        setMouse(true);
+    // // Наведение на иконку корзина открывает корзину
+    const [mouseCart, setMouseCart] = useState(false);
+    const onMouseEnterCart = () => {
+        setMouseCart(true);
     };
-    const onMouseLeave = () => {
-        setMouse(false);
+    const onMouseLeaveCart = () => {
+        setMouseCart(false);
     };
 
+    // Наведение на иконку профиля открывает меню
+    const [mouseProfile, setMouseProfile] = useState(false);
+    const onMouseEnterLogin = () => {
+        setMouseProfile(true);
+    };
+    const onMouseLeaveLogin = () => {
+        setMouseProfile(false);
+    };
     return (
         <div className={classes.header_row}>
             {/*{<!-- Btn catalog search -->}*/}
@@ -83,7 +92,9 @@ const TwoLvl = ({setSearch,setModale}) => {
                     </svg>
                     <div className={classes.text_icon}>Избранное</div>
                 </Link>
-                <Link className={classes.item_nav} onClick={() => setModale(true)}>
+
+                <div className={classes.item_nav} onClick={() => setModale(true)} onMouseEnter={onMouseEnterLogin}
+                     onMouseLeave={onMouseLeaveLogin}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M10.0007 9.16659C12.3007 9.16659 14.1673 7.30075 14.1673 4.99992C14.1673 2.69909 12.3007 0.833252 10.0007 0.833252C7.70065 0.833252 5.83398 2.69909 5.83398 4.99992C5.83398 7.30075 7.70065 9.16659 10.0007 9.16659Z"
@@ -91,10 +102,13 @@ const TwoLvl = ({setSearch,setModale}) => {
                         <path d="M17.5 19V16.875C17.5 14.4675 14.125 12.5 10 12.5C5.875 12.5 2.5 14.4675 2.5 16.875V19"
                               stroke="#222529" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    <div className={classes.text_icon}>{user.id?user.email:"Войти"}</div>
-                </Link>
-                <div onMouseEnter={onMouseEnter}
-                     onMouseLeave={onMouseLeave}>
+                    <div className={classes.text_icon}>{auth ? user.email : "Войти"}
+                    </div>
+                    {mouseProfile && auth && <Menu/>}
+                </div>
+
+                <div onMouseEnter={onMouseEnterCart}
+                     onMouseLeave={onMouseLeaveCart}>
                     <div className={classes.item_nav}>
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd"
@@ -104,7 +118,7 @@ const TwoLvl = ({setSearch,setModale}) => {
                         <div className={classes.text_icon}>Корзина</div>
                     </div>
                     {cart.length > 0 && <Chip count={cart.length}/>}
-                    {mouse && <ModaleCart/>}
+                    {mouseCart && <ModaleCart/>}
                 </div>
             </div>
         </div>
