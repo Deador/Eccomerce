@@ -1,5 +1,5 @@
 const uuid = require("uuid");
-const {Device, DeviceInfo} = require("../model/model");
+const {Device, DeviceInfo, Type} = require("../model/model");
 const path = require("path");
 
 class ProductController {
@@ -45,26 +45,25 @@ class ProductController {
         return res.json(device);
     }
 
-
-    async editProduct(req, res) {
-        if (!req.body) {
-            return res.sendStatus(400)
-        }
-        let {id, name, description, price, old_price, typeId, sale} = req.body; // Достаю параметры из тела запроса
-
-        const updateDevice = await Device.update({
+    async updateProduct(req, res) {
+        let {id,name, description, price, old_price, typeId, sale} = req.body; // Достаю параметры из тела запроса
+        const device = await Device.findOne({
             where: {id},
-            include: [{model: Device, name, description, price, old_price, typeId, sale}]
+            include: [{model: DeviceInfo, as: "info"}]
         })
-
-
-        // let {name, description, price, old_price, typeId, sale} = req.body; // Достаю параметры из тела запроса
-        //
-        // const updateDevice = await Device.update(req.body.id, name, description, price, old_price, typeId, sale)
-        return res.json(updateDevice)
+        device.update({
+            name, description, price, old_price, typeId, sale
+        })
+        return res.json(device);
     }
+
+    async deleteProduct(req, res) {
+        const {id} = req.body
+        const product = await Type.destroy({where: {id}})
+        return res.json({message: "Товар удален"});
+    }
+
 
 }
 
-module
-    .exports = new ProductController();
+module.exports = new ProductController();
