@@ -58,8 +58,8 @@ class ProductController {
     }
 
     async deleteProduct(req, res) {
-        const {id} = req.body
-        const product = await Type.destroy({where: {id}})
+        const {id} = req.params
+        const product = await Device.destroy({where: {id}})
         return res.json({message: "Товар удален"});
     }
 

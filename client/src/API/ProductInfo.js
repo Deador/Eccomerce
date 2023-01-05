@@ -18,14 +18,24 @@ export default class GetInfo {
 }
 
 export const crProduct = async (device) => {
-    const data = await axios.post("http://localhost:5000/api/product", device)
+    const response = await axios.post("http://localhost:5000/api/product", device)
 }
 
 export const getAllProduct = async () => {
-    const data = await axios.get("http://localhost:5000/api/product");
-    return data;
+    const response = await axios.get("http://localhost:5000/api/product");
+    return response;
 }
 
-export const crType=async(type)=>{
-    const data=await axios.post("http://localhost:5000/api/type", type);
+export const crType = async (type) => {
+    const response = await axios.post("http://localhost:5000/api/type", type);
+}
+
+export const deleteProduct = async (id) => {
+    const response = await axios.delete("http://localhost:5000/api/product/" + id);
+    return response;
+}
+
+export const editProduct = async (device) => {
+    const response = await axios.put("http://localhost:5000/api/product", device);
+    return response;
 }
