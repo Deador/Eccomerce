@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from "./oneLvlHeader.module.css";
+import {Link} from "react-router-dom";
 
-const OneLvl = () => {
+const OneLvl = ({user,auth}) => {
     return (
         <div className={classes.nav_one_lvl}>
             <div className={classes.social_media}>
@@ -12,7 +13,7 @@ const OneLvl = () => {
                             className={classes.icon_loc}
                         /><div className="text_header_one">Москва</div>
                     </div>
-                <div className={classes.icon_loc}>
+                <div className={classes.icon_social}>
                     <img
                         src="/source/icons/instagram.svg"
                         alt=""
@@ -27,7 +28,8 @@ const OneLvl = () => {
                     />
                 </div>
                 <div className={classes.phone_number}>
-                    <div>8 800 333-01-82</div>
+                    <div className={classes.number_text}>8 800 333-01-82</div>
+                    {auth && user.role==='ADMIN'&&<Link to='/admin' className={classes.link_map}>Админ панель</Link>}
                 </div>
             </div>
             <a href="#" className={classes.link_map}>Карта магазинов</a>

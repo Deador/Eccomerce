@@ -1,5 +1,4 @@
 import './App.css';
-import {AuthContext} from "./context/context";
 import {useEffect, useState} from "react";
 import AppRouting from "./components/AppRouting";
 import {check} from "./API/Login";
@@ -9,7 +8,7 @@ import Loader from "./components/basic/UI/loader/Loader";
 
 
 function App() {
-    const [auth, setAuth] = useState(false);
+    // const [auth, setAuth] = useState(false);
 
     const [loading, setLoading] = useState(true);
 
@@ -32,9 +31,7 @@ function App() {
 
 
     return (
-        <AuthContext.Provider value={{auth, setAuth}}>
             <AppRouting/>
-        </AuthContext.Provider>
     );
 }
 

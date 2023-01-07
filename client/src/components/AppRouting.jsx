@@ -1,20 +1,16 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {AuthContext} from "../context/context";
 import {privateRoutes, publicRoutes} from "../routes/Routing";
+import {useSelector} from "react-redux";
 
 const AppRouting = () => {
-    const {auth, setAuth} = useContext(AuthContext);
-    useEffect(() => {
-        if (localStorage.getItem("auth")) {
-            setAuth(true)
-        }
-    })
-// localStorage.clear()
+    const auth = useSelector(state => state.inCart.auth)
+    const user = useSelector(state => state.inCart.userSignIn);
+
     return (
         <BrowserRouter>
             <Routes>
-                {auth ? privateRoutes.map(rout => <Route path={rout.path} element={rout.element} key={rout.id}/>)
+                {auth && user.role === 'ADMIN' ? privateRoutes.map(rout => <Route path={rout.path} element={rout.element} key={rout.id}/>)
                     : publicRoutes.map(rout => <Route path={rout.path} element={rout.element} key={rout.id}/>)}
             </Routes>
         </BrowserRouter>

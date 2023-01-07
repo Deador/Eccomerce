@@ -1,16 +1,21 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import classes from "./Header.module.css"
-import {AuthContext} from "../../../context/context";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setUser, userAuth} from "../../../store/toolkitReducer";
 
 const Header = () => {
 
     // Выход
-    const {auth, setAuth} = useContext(AuthContext);
-    const logOut = () => {
-        setAuth(false);
-        localStorage.removeItem("auth");
-    };
+    const dispath = useDispatch();
+    const navigate = useNavigate()
+    const logOut = (e) => {
+        dispath(userAuth(false));
+        dispath(setUser({}));
+        localStorage.removeItem("token");
+        navigate('/')
+    }
+
 
     return (
         <div className={classes.header}>

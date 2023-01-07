@@ -1,7 +1,6 @@
 import Main from "../pages/Main";
 import InfoProduct from "../pages/InfoProduct";
 import React from "react";
-import AuthAdmin from "../pages/AuthAdmin";
 import PageError from "../pages/PageError";
 import AdminProduct from "../pages/AdminProduct";
 import AdminType from "../pages/AdminType";
@@ -20,10 +19,6 @@ export const publicRoutes = [{
     id: 3,
     path: "*",
     element: <PageError/>
-}, {
-    id: 4,
-    path: "/admin",
-    element: <AuthAdmin/>
 }, {
     id: 5,
     path: "/cart",

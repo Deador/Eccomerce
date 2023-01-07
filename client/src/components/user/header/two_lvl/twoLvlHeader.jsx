@@ -6,10 +6,8 @@ import Chip from "../chip/Chip";
 import {Link} from "react-router-dom";
 import Menu from "../../menu/Menu";
 
-const TwoLvl = ({setSearch, setModale}) => {
+const TwoLvl = ({setSearch, setModale,user,auth}) => {
     const cart = useSelector(state => state.inCart.products);
-    const user = useSelector(state => state.inCart.userSignIn);
-    const auth = useSelector(state => state.inCart.auth);
 
     // // Наведение на иконку корзина открывает корзину
     const [mouseCart, setMouseCart] = useState(false);
@@ -86,9 +84,9 @@ const TwoLvl = ({setSearch, setModale}) => {
             <div className={classes.right_nav_element_two}>
                 <Link to="/" className={classes.item_nav}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        <path fillRule="evenodd" clipRule="evenodd"
                               d="M14.584 2.5C12.2923 2.5 11.0382 3.6975 10.0007 4.75C8.96315 3.6975 7.70898 2.5 5.41732 2.5C2.36148 2.5 0.833984 5.05917 0.833984 7.75C0.833984 12.2808 6.18148 16 10.0007 17.5C13.8198 16 19.1673 12.2808 19.1673 7.75C19.1673 5.05917 17.6398 2.5 14.584 2.5Z"
-                              stroke="#222529" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              stroke="#222529" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     <div className={classes.text_icon}>Избранное</div>
                 </Link>
@@ -96,11 +94,11 @@ const TwoLvl = ({setSearch, setModale}) => {
                 <div className={classes.item_nav} onClick={() => setModale(true)} onMouseEnter={onMouseEnterLogin}
                      onMouseLeave={onMouseLeaveLogin}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        <path fillRule="evenodd" clipRule="evenodd"
                               d="M10.0007 9.16659C12.3007 9.16659 14.1673 7.30075 14.1673 4.99992C14.1673 2.69909 12.3007 0.833252 10.0007 0.833252C7.70065 0.833252 5.83398 2.69909 5.83398 4.99992C5.83398 7.30075 7.70065 9.16659 10.0007 9.16659Z"
-                              stroke="#222529" stroke-width="1.5" stroke-linecap="round"/>
+                              stroke="#222529" strokeWidth="1.5" strokeLinecap="round"/>
                         <path d="M17.5 19V16.875C17.5 14.4675 14.125 12.5 10 12.5C5.875 12.5 2.5 14.4675 2.5 16.875V19"
-                              stroke="#222529" stroke-width="1.5" stroke-linecap="round"/>
+                              stroke="#222529" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                     <div className={classes.text_icon}>{auth ? user.email : "Войти"}
                     </div>

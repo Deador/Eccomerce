@@ -12,7 +12,6 @@
     margin-right: 24px;
     display: flex;
     align-items: center;
-
 }
 
 .icon_loc {
@@ -21,14 +20,21 @@
 
 .social_media {
     display: flex;
+    align-items: center;
 }
 
 .icon_social {
     padding-right: 8px;
+
 }
 
 .phone_number {
     margin-left: 24px;
+    display: flex;
+    align-items: center;
+}
+.number_text{
+    margin-right: 24px;
 }
 
 .link_map {

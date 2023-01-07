@@ -27,6 +27,7 @@ const Card = ({props, product}) => {
             <img
                 src={IMG}
                 alt="Image"
+                className={classes.img}
             />
             {props.sale !== 0 &&
                 <div className={classes.sale}><div className={classes.number_sale}>-{props.sale}%</div></div>}
