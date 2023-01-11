@@ -7,6 +7,7 @@ import {useFetching} from "../hooks/useLoaderError";
 import Banner from "../components/user/main_banner/Banner";
 import Registration from "../components/user/modales/registration/Registration";
 import Auth from "../components/user/modales/auth/Auth";
+import Footer from "../components/user/footer/Footer";
 
 function Main() {
     const [search, setSearch] = useState("");
@@ -37,6 +38,7 @@ function Main() {
             {modale && !registration ? <Auth modale={modale} setModale={setModale} onReg={setRegistration}/> :
                 <Registration modale={modale} setModale={setModale} onReg={setRegistration}/>}
             <CardList props={searchProduct}/>
+            <Footer/>
         </div>
     );
 }

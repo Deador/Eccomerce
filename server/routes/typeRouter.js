@@ -4,6 +4,7 @@ const typeController = require("../controllers/typeController")
 
 router.get("/", typeController.getAll)
 router.post("/", typeController.createType)
-router.delete("/", typeController.deleteType)
+router.delete("/:id", typeController.deleteType)
+router.put('/', typeController.updateType)
 
 module.exports = router

@@ -1,0 +1,92 @@
+.footer {
+    margin-top: 80px;
+    padding-bottom: 56px;
+}
+
+.footer__container {
+    padding-top: 56px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer::before {
+    content: "";
+    width: 1200px;
+    height: 1px;
+    background: #eee;
+    position: absolute;
+}
+
+.footer__numbers .footer__middle .footer__mailing {
+    flex-direction: column;
+}
+
+.footer__numbers {
+    margin-right: 40px;
+}
+
+.logo {
+    margin-bottom: 24px;
+}
+
+.footer__middle {
+    margin-right: 24px;
+    max-width: 274px;
+}
+
+
+.numbers__text {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.numbers__text:last-child {
+    margin-bottom: 0;
+}
+
+.link {
+    font-size: 18px;
+}
+
+.footer__text {
+    font-size: 14px;
+    color: #77727C;
+    margin-top: 24px;
+    line-height: 1.2;
+}
+
+.footer__socials {
+    margin-top: 16px;
+}
+
+.socials__icon {
+    margin-right: 12px;
+}
+
+.mailing__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.mailing__text {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #77727C;
+}
+
+.mailing__button {
+    background: #da1934;
+    padding: 8px 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2px;
+}
+
+.mailing__input {
+    position: relative;
+}
+

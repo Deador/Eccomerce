@@ -1,7 +1,14 @@
 import React from 'react';
 import classes from "./Row.module.css";
 
-const Row = ({props}) => {
+const Row = ({props, deleteType, setDataRow, setModale}) => {
+
+    // Записываю данные конкретной строки в useState для подставления в value полей
+    const handlerDataRow = () => {
+        setModale(true);
+        setDataRow(props)
+    };
+
     return (
         <div className={classes.container}>
             <div className={classes.column_container}>
@@ -9,8 +16,9 @@ const Row = ({props}) => {
                 <div className={classes.text}>{props.name}</div>
             </div>
             <div className={classes.icon_container}>
-                <div className={classes.icon}>
-                    <svg className="icon_pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className={classes.icon} onClick={handlerDataRow}>
+                    <svg className="icon_pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-outside-1_2138_6619" maskUnits="userSpaceOnUse" x="3" y="4" width="17"
                               height="17"
                               fill="black">
@@ -24,8 +32,9 @@ const Row = ({props}) => {
                         <path d="M12.5 7.5L16.5 11.5" stroke="#757575" strokeWidth="1.5"/>
                     </svg>
                 </div>
-                <div className="">
-                    <svg className="icon_pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="" onClick={() => deleteType(props.id)}>
+                    <svg className="icon_pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 15L10 12" stroke="#757575" strokeWidth="1.5" strokeLinecap="round"/>
                         <path d="M14 15L14 12" stroke="#757575" strokeWidth="1.5" strokeLinecap="round"/>
                         <path

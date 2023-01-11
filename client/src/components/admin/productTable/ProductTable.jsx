@@ -33,15 +33,16 @@ const ProductTable = () => {
     const [modale, setModale] = useState(false);
 
     // Состояние для получения инфы из конкретной строки для подставления в input
-    const [dataRow, setDataRow]=useState({})
+    const [dataRow, setDataRow] = useState({})
 
 
     return (
         <div className={classes.container}>
             <TableHeader/>
             {err && <Title3>{err}</Title3>}
-            {loader ? <Loader/> : data.map(element => <Row props={element} key={element.name} deleteProduct={deletePr} modale={modale} setModale={setModale} setDataRow={setDataRow}/>)}
-            {modale&&<EditProduct value={modale} setValue={setModale} props={dataRow}/>}
+            {loader ? <Loader/> : data.map(element => <Row props={element} key={element.name} deleteProduct={deletePr}
+                                                           setModale={setModale} setDataRow={setDataRow}/>)}
+            {modale && <EditProduct value={modale} setValue={setModale} props={dataRow}/>}
         </div>
     );
 };

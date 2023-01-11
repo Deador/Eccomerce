@@ -39,3 +39,13 @@ export const editProduct = async (device) => {
     const response = await axios.put("http://localhost:5000/api/product", device);
     return response;
 }
+
+export const deleteType = async (id) => {
+    const response = await axios.delete("http://localhost:5000/api/type/" + id);
+    return response;
+}
+
+export const editType = async (id,name) => {
+    const response = await axios.put("http://localhost:5000/api/type", {id,name});
+    return response;
+}

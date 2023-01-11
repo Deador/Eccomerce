@@ -1,4 +1,4 @@
-const {Type} = require("../model/model");
+const {Type, Device, DeviceInfo} = require("../model/model");
 
 class TypeController {
     async getAll(req, res) {
@@ -13,9 +13,18 @@ class TypeController {
     }
 
     async deleteType(req, res) {
-        const {id} = req.body
+        const {id} = req.params
         const type = await Type.destroy({where: {id}})
         return res.json({message: "Тег удален"});
+    }
+
+    async updateType(req, res) {
+        let {id, name} = req.body; // Достаю параметры из тела запроса
+        const type = await Type.findOne({
+            where: {id},
+        })
+        type.update({name})
+        return res.json(type);
     }
 }
 
